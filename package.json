@@ -1,0 +1,28 @@
+{
+  "name": "mood4tunes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iSyn/mood4tunes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iSyn/mood4tunes/issues"
+  },
+  "homepage": "https://github.com/iSyn/mood4tunes#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "node-fetch": "^1.6.3",
+    "path": "^0.12.7"
+  }
+}
