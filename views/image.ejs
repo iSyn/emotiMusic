@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Mood 4 Tunes </title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Mood 4 Tunes</h1>
+    </header>
+
+    <div>
+      <!-- <% console.log('IN EJS', faceData[0].scores) %> -->
+      <p>Emotion Values:</p>
+      <p> anger: <%=faceData[0].scores.anger * 100 %>%</p>
+      <p> contempt: <%=faceData[0].scores.contempt * 100 %>%</p>
+      <p> disgust: <%=faceData[0].scores.disgust * 100 %>%</p>
+      <p> fear: <%=faceData[0].scores.fear * 100 %>%</p>
+      <p> happiness: <%=faceData[0].scores.happiness * 100 %>%</p>
+      <p> neutral: <%=faceData[0].scores.neutral * 100 %>%</p>
+      <p> sadness: <%=faceData[0].scores.sadness * 100 %>%</p>
+      <p> surprise: <%=faceData[0].scores.surprise * 100 %>%</p>
+    </div>
+
+  </body>
+
+</html>
+
