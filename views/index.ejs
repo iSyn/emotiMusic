@@ -5,30 +5,46 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Mood 4 Tunes </title>
+    <title> emotiMusic </title>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   </head>
 
   <body>
 
     <div class="wrapper">
 
+      <div class='example-links'>
+        <div class="circle"></div>
+        <h3>Example Links (click one!)</h3>
+        <ul>
+          <li>http://i.imgur.com/HBtKyeC.jpg</li>
+          <li>http://i.imgur.com/RQxJkvQ.png</li>
+          <li>http://i.imgur.com/hxVx9.jpg</li>
+          <li>http://i.imgur.com/WdY06.png</li>
+        </ul>
+      </div>
+
+
       <div class='container'>
 
         <header>
-          <h1>emotiMusic</h1>
+          <h1><span style='color: #FF7043'>emoti</span>Music</h1>
         </header>
 
         <div>
           <p class='text'>Submit an image url for your face!</p>
-          <form action="/image" method='post'>
-            <input type="text" placeholder='url goes here' name='url'>
+          <form action="/image" method='post' id='submitLink'>
+            <input type="text" placeholder='url goes here' name='url' required autofocus autocomplete="off">
           </form>
-          <div class="play-button">
+          <button class="play-button" type='submit' form='submitLink'>
             <div class="triangle"></div>
-          </div>
+          </button>
+          <footer>
+            <p>made with <span style='color: red'>&hearts;</span></p>
+          </footer>
         </div>
 
       </div>
@@ -37,5 +53,8 @@
 
 
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="scripts.js"></script>
 
 </html>

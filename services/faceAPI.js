@@ -14,14 +14,15 @@ let fetchEmotions = function(req, res, next) {
       'Ocp-Apim-Subscription-Key': API_KEY
     },
     body: JSON.stringify({
-      // 'url': req.body.url
-      'url': pic
+      'url': req.body.url
+      // 'url': pic
     })
   }
 
   fetch(API_URL, PARAMS).then(r => r.json()).then((data) => {
+    let body = JSON.parse(PARAMS.body)
     res.faceData = data
-    console.log('res.faceData', res.faceData)
+    res.faceData.imageLink = body.url
     next()
   })
 }

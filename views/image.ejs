@@ -5,18 +5,20 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Mood 4 Tunes </title>
+    <title> emotiMusic </title>
     <link rel="stylesheet" href="./styles.css">
   </head>
 
   <body>
 
     <header>
-      <h1>Mood 4 Tunes</h1>
+      <h1>emotiMusic</h1>
     </header>
 
     <div>
-      <!-- <% console.log('IN EJS', faceData[0].scores) %> -->
+
+      <img src="<%= faceData.imageLink%>" alt="">
+      <% console.log('FACEDATA', faceData.imageLink) %>
       <p>Emotion Values:</p>
       <p> anger: <%=faceData[0].scores.anger * 100 %>%</p>
       <p> contempt: <%=faceData[0].scores.contempt * 100 %>%</p>
