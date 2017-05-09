@@ -24,20 +24,33 @@
 
       <% if (!faceData.error) { %>
         <div class='stats'>
-          <div class="circle">
+          <!-- <div class="circle">
             <div class="line"></div>
-          </div>
+          </div> -->
           <img src="<%= faceData.imageLink%>" alt="">
           <div class="stats-data">
-            <h3>Emotion Values</h3>
-            <p> anger: <%=faceData[0].scores.anger * 100 %>%</p>
-            <p> contempt: <%=faceData[0].scores.contempt * 100 %>%</p>
-            <p> disgust: <%=faceData[0].scores.disgust * 100 %>%</p>
-            <p> fear: <%=faceData[0].scores.fear * 100 %>%</p>
-            <p> happiness: <%=faceData[0].scores.happiness * 100 %>%</p>
-            <p> neutral: <%=faceData[0].scores.neutral * 100 %>%</p>
-            <p> sadness: <%=faceData[0].scores.sadness * 100 %>%</p>
-            <p> surprise: <%=faceData[0].scores.surprise * 100 %>%</p>
+            <% if (faceData.length <= 1) { %>
+                 <h3>Emotion Values - <%=faceData.length%> person detected%></h3>
+                 <br/>
+            <% } else { %>
+                 <h3>Emotion Values - <%=faceData.length%> people detected%></h3>
+                 <br/>
+            <% } %>
+
+            <%faceData.forEach((face, i) => {%>
+              <% if (faceData.length > 1) { %>
+                   <p>person <%=i+1%></p>
+              <% } %>
+              <p> anger: &nbsp; <%=face.scores.anger * 100 %>%</p>
+              <p> contempt: &nbsp; <%=face.scores.contempt * 100 %>%</p>
+              <p> disgust: &nbsp; <%=face.scores.disgust * 100 %>%</p>
+              <p> fear: &nbsp; <%=face.scores.fear * 100 %>%</p>
+              <p> happiness:&nbsp;  <%=face.scores.happiness * 100 %>%</p>
+              <p> neutral:&nbsp;  <%=face.scores.neutral * 100 %>%</p>
+              <p> sadness:&nbsp;  <%=face.scores.sadness * 100 %>%</p>
+              <p> surprise: &nbsp; <%=face.scores.surprise * 100 %>%</p>
+              <br/>
+            <%})%>
           </div>
         </div>
       <% } else { %>
