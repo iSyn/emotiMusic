@@ -7,6 +7,7 @@ imageRoute.post('/', faceAPI.fetchEmotions, (req, res) => {
   res.render('image', {
     faceData: res.faceData
   })
+
 })
 
 module.exports = imageRoute
@@ -25,3 +26,10 @@ module.exports = imageRoute
 //    }
 //  }
 // ]
+// imageLink = {
+//   error: {
+//     code: 'Invalid',
+//     message: 'Invalid image url'
+//   },
+//   imageLink: '9955adc574574c438dab87cab4b776c5'
+// }

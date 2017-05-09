@@ -6,28 +6,41 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> emotiMusic </title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./image.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   </head>
 
   <body>
 
-    <header>
-      <h1>emotiMusic</h1>
-    </header>
+    <div class="wrapper">
 
-    <div>
+      <a href="/">
+        <header>
+          <h1 class='header-logo'><span style='color: #FF7043'>emoti</span>Music</h1>
+        </header>
+      </a>
 
-      <img src="<%= faceData.imageLink%>" alt="">
-      <% console.log('FACEDATA', faceData.imageLink) %>
-      <p>Emotion Values:</p>
-      <p> anger: <%=faceData[0].scores.anger * 100 %>%</p>
-      <p> contempt: <%=faceData[0].scores.contempt * 100 %>%</p>
-      <p> disgust: <%=faceData[0].scores.disgust * 100 %>%</p>
-      <p> fear: <%=faceData[0].scores.fear * 100 %>%</p>
-      <p> happiness: <%=faceData[0].scores.happiness * 100 %>%</p>
-      <p> neutral: <%=faceData[0].scores.neutral * 100 %>%</p>
-      <p> sadness: <%=faceData[0].scores.sadness * 100 %>%</p>
-      <p> surprise: <%=faceData[0].scores.surprise * 100 %>%</p>
+      <% if (!faceData.error) { %>
+        <div class='stats'>
+          <img src="<%= faceData.imageLink%>" alt="">
+          <div class="stats-data">
+            <h3>Emotion Values</h3>
+            <p> anger: <%=faceData[0].scores.anger * 100 %>%</p>
+            <p> contempt: <%=faceData[0].scores.contempt * 100 %>%</p>
+            <p> disgust: <%=faceData[0].scores.disgust * 100 %>%</p>
+            <p> fear: <%=faceData[0].scores.fear * 100 %>%</p>
+            <p> happiness: <%=faceData[0].scores.happiness * 100 %>%</p>
+            <p> neutral: <%=faceData[0].scores.neutral * 100 %>%</p>
+            <p> sadness: <%=faceData[0].scores.sadness * 100 %>%</p>
+            <p> surprise: <%=faceData[0].scores.surprise * 100 %>%</p>
+          </div>
+        </div>
+      <% } else { %>
+        <h1>ERROR, please use another link</h1>
+      <% } %>
+
     </div>
 
   </body>

@@ -24,9 +24,34 @@ let fetchEmotions = function(req, res, next) {
     res.faceData = data
     res.faceData.imageLink = body.url
     next()
+  }).catch((err) => {
+    console.log('ERRERERERER', err)
   })
 }
 
 module.exports = {
   fetchEmotions
 }
+
+// [
+//   {
+//     faceRectangle: {
+//       height: 116,
+//       left: 150,
+//       top: 150,
+//       width: 116
+//     },
+//     scores: {
+//       anger: 0.0000046557775,
+//       contempt: 0.00002102154,
+//       disgust: 0.00002325293,
+//       fear: 0.0000013821799,
+//       happiness: 9.6941406e-8,
+//       neutral: 0.00939752,
+//       sadness: 0.9905514,
+//       surprise: 6.704521e-7
+//     }
+//   },
+//   imageLink: 'http://i.imgur.com/hxVx9.jpg'
+// ]
+
