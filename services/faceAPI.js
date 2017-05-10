@@ -34,14 +34,27 @@ let fetchEmotions = function(req, res, next) {
       res.faceData[0].scores.sadness,
       res.faceData[0].scores.surprise
     ]
+    let emotions = ['angry', 'contempt', 'disgusted', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
 
-    var largest = Math.max.apply(Math, emotionScores);
-    console.log(largest)
+    let largest = 0;
+    let emotion;
+
+    for (i = 0; i < emotionScores.length; i++) {
+      console.log(emotionScores[i])
+      if (emotionScores[i] > largest) {
+        largest = emotionScores[i]
+        emotion = i
+      }
+    }
+
+    console.log(emotions[emotion], largest * 100)
+    res.faceData[0].largestEmotion = emotions[emotion]
 
 
     next()
   }).catch((err) => {
     console.log('ERRERERERER', err)
+    next()
   })
 }
 

@@ -86,6 +86,10 @@ img {
   top: 15%;
 }
 
+.emotion-text {
+  font-family: 'Open Sans';
+}
+
 h3 {
   text-align: center;
   border-bottom: 1px solid black;

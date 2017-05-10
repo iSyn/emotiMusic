@@ -52,7 +52,13 @@
               <br/>
             <%})%>
           </div>
+
         </div>
+
+        <div class='right'>
+          <h1 class='emotion-text'>We detect that you are... <%=faceData[0].largestEmotion%> </h1>
+        </div>
+
       <% } else { %>
         <h1>ERROR, please use another link</h1>
       <% } %>
