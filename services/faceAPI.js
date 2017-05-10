@@ -21,7 +21,24 @@ let fetchEmotions = function(req, res, next) {
     let body = JSON.parse(PARAMS.body)
     res.faceData = data
     res.faceData.imageLink = body.url
-    console.log('DATA', data)
+
+    // get emotion scores
+    console.log('data', res.faceData[0].scores)
+    let emotionScores = [
+      res.faceData[0].scores.anger,
+      res.faceData[0].scores.contempt,
+      res.faceData[0].scores.disgust,
+      res.faceData[0].scores.fear,
+      res.faceData[0].scores.happiness,
+      res.faceData[0].scores.neutral,
+      res.faceData[0].scores.sadness,
+      res.faceData[0].scores.surprise
+    ]
+
+    var largest = Math.max.apply(Math, emotionScores);
+    console.log(largest)
+
+
     next()
   }).catch((err) => {
     console.log('ERRERERERER', err)
