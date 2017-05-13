@@ -4,7 +4,7 @@ const spotifyAPI = require('./../services/spotifyAPI.js')
 
 let imageRoute = Router()
 
-imageRoute.post('/', faceAPI.fetchEmotions, spotifyAPI.authorize, (req, res) => {
+imageRoute.post('/', faceAPI.fetchEmotions, spotifyAPI.getPlaylist, (req, res) => {
   res.render('image', {
     faceData: res.faceData
   })
