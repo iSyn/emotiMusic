@@ -22,8 +22,6 @@ let fetchEmotions = function(req, res, next) {
     res.faceData = data
     res.faceData.imageLink = body.url
 
-    // get emotion scores
-    console.log('data', res.faceData[0].scores)
     let emotionScores = [
       res.faceData[0].scores.anger,
       res.faceData[0].scores.contempt,

@@ -1,8 +1,11 @@
 const fetch = require('node-fetch')
 
+const AUTH_URL = 'https://accounts.spotify.com/authorize/'
 const API_URL = 'https://api.spotify.com/v1/search'
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID
+const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET
 const REDIRECT_URI = encodeURIComponent('http://localhost:3000/image')
+const FULL_AUTH_URL = `${AUTH_URL}?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&show_dialog=true`
 
 let getPlaylist = function(req, res, next) {
   console.log('getPlaylist function firing')
@@ -13,7 +16,29 @@ let getPlaylist = function(req, res, next) {
   })
 }
 
+let authorize = (req, res, next) => {
+  console.log('authorize firing')
+  // res.redirect(FULL_AUTH_URL)
+  // let code = req.query.codex
+  // fetch(FULL_AUTH_URL).then((data) => {
+  //   console.log(data)
+  //   next()
+  // })
+  next()
+}
+
 
 module.exports = {
-  getPlaylist
+  getPlaylist,
+  authorize
 }
+
+// method: "POST",
+//     url: "https://accounts.spotify.com/api/token",
+//     data: {
+//       "grant_type":    "authorization_code",
+//       "code":          code,
+//       "redirect_uri":  myurl,
+//       "client_secret": mysecret,
+//       "client_id":     myid,
+//     },

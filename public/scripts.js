@@ -6,4 +6,8 @@ $(() => {
     $('input:text').val(e.target.innerText)
   })
 
+  $('.get-playlist-button').click(() => {
+
+  })
+
 })
